@@ -53,10 +53,10 @@ export function Header() {
                 )}
               </Link>
               {appUser.role === "admin" && (
-                <Link to="/admin" className="hidden md:inline text-sm font-semibold text-brand">
+                <Link to="/admin" className="text-sm font-semibold text-brand">
                   Admin
                 </Link>
-              )}
+              )} 
               <button onClick={signOut} className="hidden md:inline text-sm text-slate-500 hover:text-slate-800">
                 Log out
               </button>
