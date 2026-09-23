@@ -20,7 +20,7 @@ export default function AddProfilePage() {
 
   if (!appUser) return null;
 
-  const unlocked = appUser.xp >= UNLOCK_THRESHOLD;
+  const unlocked = appUser.xp >= UNLOCK_THRESHOLD || appUser.role === "admin"; 
   const needsContentUrl = action === "like" || action === "comment";
 
   async function handleSubmit(e: React.FormEvent) {
