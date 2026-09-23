@@ -47,10 +47,10 @@ export function Header() {
               <Link to="/notifications" className="relative text-xl" aria-label="Notifications">
                 🔔
                 {unread > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] rounded-full w-4 h-4 flex items-center justify-center">
-                    {unread > 9 ? "9+" : unread}
+                  <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] rounded-full min-w-[16px] h-4 px-1 flex items-center justify-center">
+                    {unread}
                   </span>
-                )}
+                )} 
               </Link>
               {appUser.role === "admin" && (
                 <Link to="/admin" className="text-sm font-semibold text-brand">
