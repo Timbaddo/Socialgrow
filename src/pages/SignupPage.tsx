@@ -13,15 +13,16 @@ export default function SignupPage() {
   const [done, setDone] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  async function handleSubmit(e: React.FormEvent) {
+   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
     setError(null);
-    const { error } = await signUp(email, password, username);
+    const { error, session } = await signUp(email, password, username);
     setLoading(false);
     if (error) setError(error);
+    else if (session) navigate("/");
     else setDone(true);
-  }
+   }
 
   if (done) {
     return (
